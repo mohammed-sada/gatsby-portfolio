@@ -9,9 +9,9 @@ module.exports = {
     title: "WebDev Portfolio",
     description: "This is WebDev Portfolio Site",
     author: "@webdev",
-    twitterUsername: "@john_smilga",
-    image: "/twitter-img.png",
-    siteUrl: "https://testing-strapi-gatsby-build.netlify.app",
+    twitterUsername: "@Muhamed_Sada",
+    image: "/twitter-img.PNG",
+    siteUrl: "https://sada-portfolio.netlify.app",
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -28,7 +28,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `https://powerful-bastion-14718.herokuapp.com/`,
+        apiURL: `http://localhost:1337`,
         queryLimit: 1000, // Default to 100
         contentTypes: [`jobs`, `projects`, `blogs`],
         singleTypes: [`about`]
