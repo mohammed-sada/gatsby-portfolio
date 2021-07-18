@@ -1,5 +1,5 @@
 import React from "react"
-import { FaCode, FaSketch, FaAndroid } from "react-icons/fa"
+import { FaCode, FaSketch } from "react-icons/fa"
 export default [
   {
     id: 1,
@@ -18,5 +18,4 @@ export default [
     title: "web design",
     text: `User Experience (UX),User Interface (UI),Graphic design,Responsive design,Composition`,
   },
-
 ]

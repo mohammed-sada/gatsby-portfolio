@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Hero from "../components/Hero"
 import Services from "../components/Services"
-import Jobs from "../components/Jobs"
+// import Jobs from "../components/Jobs"
 import Projects from "../components/Projects"
 import Blogs from "../components/Blogs"
 import SEO from "../components/SEO"
@@ -11,11 +11,11 @@ import SEO from "../components/SEO"
 export default ({ data }) => {
   const {
     allStrapiProjects: { nodes: projects },
-    allStrapiBlogs: { nodes: blogs }
-  } = data;
+    allStrapiBlogs: { nodes: blogs },
+  } = data
 
   return (
-    <Layout >
+    <Layout>
       <SEO title="Home" description="this is the home page" />
       <Hero />
       <Services />
@@ -28,7 +28,10 @@ export default ({ data }) => {
 
 export const query = graphql`
   {
-    allStrapiProjects(filter: {feature: {eq: true}}) {
+    allStrapiProjects(
+      filter: { feature: { eq: true } }
+      sort: { fields: published_at, order: DESC }
+    ) {
       nodes {
         description
         id
@@ -48,7 +51,7 @@ export const query = graphql`
         }
       }
     }
-    allStrapiBlogs(sort: {fields: date, order: DESC}, limit: 3) {
+    allStrapiBlogs(sort: { fields: date, order: DESC }, limit: 3) {
       nodes {
         category
         date(formatString: "MMMM do, yyyy")
@@ -65,4 +68,5 @@ export const query = graphql`
         }
       }
     }
-  }`
+  }
+`

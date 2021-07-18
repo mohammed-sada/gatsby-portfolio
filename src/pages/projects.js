@@ -4,17 +4,23 @@ import { graphql } from "gatsby"
 import Projects from "../components/Projects"
 import SEO from "../components/SEO"
 
-const ProjectsPage = ({ data: { allStrapiProjects: { nodes: projects } } }) => {
-  return <Layout>
-    <SEO title="Projects" description="this is our projects page" />
-    <section className="projects">
-      <Projects projects={projects} title="all projects" />
-    </section>
-  </Layout>
+const ProjectsPage = ({
+  data: {
+    allStrapiProjects: { nodes: projects },
+  },
+}) => {
+  return (
+    <Layout>
+      <SEO title="Projects" description="this is our projects page" />
+      <section className="projects">
+        <Projects projects={projects} title="all projects" />
+      </section>
+    </Layout>
+  )
 }
 export const query = graphql`
   {
-    allStrapiProjects {
+    allStrapiProjects(sort: { fields: published_at, order: DESC }) {
       nodes {
         description
         id
@@ -34,5 +40,6 @@ export const query = graphql`
         }
       }
     }
-  }`
+  }
+`
 export default ProjectsPage

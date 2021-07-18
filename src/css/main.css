@@ -14,27 +14,27 @@ Variables
 :root {
   /* dark shades of primary color*/
   /* --clr-primary-1: hsl(43, 86%, 17%); */
-  --clr-primary-1: hsl(184, 91%, 17%);
-  --clr-primary-2: hsl(185, 84%, 25%);
-  --clr-primary-3: hsl(185, 81%, 29%);
-  --clr-primary-4: hsl(184, 77%, 34%);
-  --clr-primary-5: #2caeba;
+  --clr-primary-1: hsl(0, 91%, 17%);
+  --clr-primary-2: hsl(1, 84%, 25%);
+  --clr-primary-3: hsl(1, 81%, 29%);
+  --clr-primary-4: hsl(0, 77%, 34%);
+  --clr-primary-5: #ba2c2c;
   /* lighter shades of primary color */
-  --clr-primary-6: hsl(185, 57%, 50%);
-  --clr-primary-7: hsl(184, 65%, 59%);
-  --clr-primary-8: hsl(184, 80%, 74%);
-  --clr-primary-9: hsl(185, 94%, 87%);
-  --clr-primary-10: hsl(186, 100%, 94%);
+  --clr-primary-6: hsl(0, 57%, 50%);
+  --clr-primary-7: hsl(1, 65%, 59%);
+  --clr-primary-8: hsl(0, 80%, 74%);
+  --clr-primary-9: hsl(1, 94%, 87%);
+  --clr-primary-10: hsl(2, 100%, 94%);
   /* darkest grey - used for headings */
-  --clr-grey-1: hsl(209, 61%, 16%);
-  --clr-grey-3: hsl(209, 34%, 30%);
-  --clr-grey-4: hsl(209, 28%, 39%);
+  --clr-grey-1: hsl(26, 61%, 16%);
+  --clr-grey-3: hsl(26, 34%, 30%);
+  --clr-grey-4: hsl(26, 28%, 39%);
   /* grey used for paragraphs */
-  --clr-grey-5: hsl(210, 22%, 49%);
-  --clr-grey-8: hsl(210, 31%, 80%);
-  --clr-grey-9: hsl(212, 33%, 89%);
-  --clr-grey-10: hsl(210, 36%, 96%);
-  --clr-green-dark: hsl(125, 67%, 35%);
+  --clr-grey-5: hsl(27, 22%, 49%);
+  --clr-grey-8: hsl(27, 31%, 80%);
+  --clr-grey-9: hsl(29, 33%, 89%);
+  --clr-grey-10: hsl(27, 36%, 96%);
+  --clr-green-dark: hsl(32, 67%, 35%);
   --clr-red-dark: hsl(360, 67%, 44%);
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-white: #fff;
@@ -55,7 +55,9 @@ Global Styles
 ===============
 */
 
-*, ::after, ::before {
+*,
+::after,
+::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -78,7 +80,10 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   letter-spacing: var(--spacing);
   text-transform: capitalize;
   line-height: 1.25;
@@ -123,7 +128,10 @@ p {
   body {
     font-size: 1rem;
   }
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     line-height: 1;
   }
 }
@@ -364,7 +372,7 @@ Sidebar
   color: var(--clr-red-dark);
   cursor: pointer;
   outline: none;
-  transition: all .2s;
+  transition: all 0.2s;
 }
 
 .close-btn:hover {
@@ -774,10 +782,16 @@ Projects
 }
 
 .project-stack {
+  text-align: center;
   margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 110px 110px;
+  grid-gap: 10px;
+  justify-content: center;
 }
 
-.project-stack span, .about-stack span {
+.project-stack span,
+.about-stack span {
   display: inline;
   background: var(--clr-grey-9);
   color: var(--clr-grey-5);
@@ -787,6 +801,13 @@ Projects
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 0.85rem;
+}
+
+.about-stack {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 110px 110px 110px;
+  justify-content: center;
 }
 
 .about-stack span {
@@ -813,6 +834,12 @@ Projects
 @media screen and (min-width: 768px) {
   .project-img {
     height: 22rem;
+  }
+  .about-stack {
+    grid-template-columns: 110px 110px 110px 110px 110px;
+  }
+  .project-stack {
+    grid-template-columns: 110px 110px 110px 110px 110px;
   }
 }
 
@@ -976,7 +1003,12 @@ Pages
 ===============
 */
 
-.blog-template, .projects-page, .blog-page, .error-page, .about-page, .contact-page {
+.blog-template,
+.projects-page,
+.blog-page,
+.error-page,
+.about-page,
+.contact-page {
   background: var(--clr-grey-10);
   min-height: calc(100vh - 5rem - 9rem);
 }
@@ -1144,7 +1176,8 @@ Blog Template
   padding: 5rem 0;
 }
 
-.blog-template h1, .blog-template h2 {
+.blog-template h1,
+.blog-template h2 {
   text-align: center;
 }
 
@@ -1182,4 +1215,9 @@ Blog Template
   width: 15rem;
   height: 15rem;
   margin: 3rem 0;
+}
+
+.logo {
+  margin: 0;
+  color: var(--clr-primary-3);
 }
